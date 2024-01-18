@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    width: 800px;
+    height: 800px;
+}
+
+#input{
+    display: block;
+    margin: 10px auto 10px auto;
+}
+
+.divBox{
+    background-color: aqua;
+    flex: 1;
+}
+
+.divRow{
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+}
