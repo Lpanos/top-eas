@@ -37,7 +37,7 @@ function runGrid(gridSize){
     gridBox = document.querySelectorAll('.divBox')
 
     gridBox.forEach(box => {
-        box.addEventListener("mouseover", (e) => {
+        box.addEventListener("mouseenter", (e) => {
 
             let alpha = parseFloat(box.style.backgroundColor.split(',')[3]);
             if(isNaN(alpha) && box.style.color != 'red'){
