@@ -36,30 +36,21 @@ function runGrid(gridSize){
     }
     gridBox = document.querySelectorAll('.divBox')
 
+
+
     gridBox.forEach(box => {
         box.addEventListener("mouseover", (e) => {
 
-            let alpha = parseFloat(box.style.backgroundColor.split(',')[3]);
-            if(isNaN(alpha) && box.style.color != 'red'){
-                    alpha = 0;
-            } else {
-                alpha = alpha * 10;
+            if(!box.alpha){
+            box.alpha = 0;
             }
 
-                if(box.style.color == 'red'){
-                    box.style.backgroundColor = `rgba(${getColor()},${getColor()},${getColor()},1)`
-                } else if (alpha == 9){
-                    box.style.color = 'red';
-                } else {
+            box.style.backgroundColor = `rgb(${getColor()-box.alpha},${getColor()-box.alpha},${getColor()-box.alpha})`
 
-            box.style.backgroundColor = `rgba(${getColor()},${getColor()},${getColor()},${++alpha / 10})`
-
-            }
+               if(box.alpha < 256){     
+                box.alpha += 25.6;
+               }
         });
-    
-        // box.addEventListener("mouseout", (e) => {
-        //     box.setAttribute('class', 'divBox');
-        // });
     
     })
 }
